@@ -238,10 +238,11 @@ async function trade() {
       break;
     }
     case STEP_SELL: {
-      await binaneHelper.sellCoins(binaneHelper.quantity);
+      const quantity = baseBalance ? baseBalance.toFixed(0) : binaneHelper.quantity
+      await binaneHelper.sellCoins(quantity);
       binaneHelper.soldPrice = binaneHelper.getSoldPrice(currentPriceBaceCoin, binaneHelper.profit, soldFee);
       console.log(`Wait for selling`);
-      console.log(`Selled ${binaneHelper.quantity} coins for ${currentPriceBaceCoin} per one coin `);
+      console.log(`Selled ${quantity} coins for ${currentPriceBaceCoin} per one coin `);
       binaneHelper.inTrade = false
       break;
     }
