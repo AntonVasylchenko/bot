@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --no-warnings app.js",
+    "dev": "nodemon  --no-warnings app.js"
   },
   "author": "",
   "license": "ISC",
@@ -11,5 +12,8 @@
   "dependencies": {
     "binance-api-node": "^0.12.9",
     "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
